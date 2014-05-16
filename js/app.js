@@ -9,7 +9,17 @@
     price: 35000,
     description: 'From South America',
     canBuy: true,
-    soldOut: false
+    soldOut: false,
+    images: [
+      {
+        full: '',
+        thumb: ''
+      },
+      {
+        full: '',
+        thumb: ''
+      }
+    ]
   },{
     name: 'Ecramenti',
     price: 4000,
@@ -22,5 +32,17 @@
     description: 'From North Africa',
     canBuy: true,
     soldOut: false   
-  }]
+  }];
+
+  app.controller('PanelController', function(){
+    this.tab = 1;
+
+    this.selectTab = function(setTab){
+      this.tab = setTab;
+    };
+
+    this.isSelected = function(checkTab){
+      return this.tab == checkTab;
+    };
+  });
 })();
