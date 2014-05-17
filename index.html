@@ -29,15 +29,44 @@
             <h4>Description</h4>
             <p>{{product.description}}</p>
           </div>
+
           <div class="panel" ng-show="panel.isSelected(2)">
             <h4>Specifications</h4>
             <blockquote>Non yet</blockquote>
           </div>
+
           <div class="panel" ng-show="panel.isSelected(3)">
             <h4>Reviews</h4>
-            <blockquote>None yet!</blockquote>
+            <blockquote ng-repeat="review in product.reviews">
+              <b>Stars: {{review.stars}}</b>
+              {{review.body}} 
+              <cite>by: {{review.author}}</cite>
+            </blockquote>
+
+            <form class="form-horizontal" role="form" name="reviewForm">
+              <blockquote>
+                <b>Stars: {{review.stars}}</b>
+                {{review.body}}
+                <cite>by: {{review.author}}</cite>
+              </blockquote>
+
+              <select ng-model="review.stars" class="form-control">
+                <option value="1">1 star</option>
+                <option value="2">2 stars</option>
+                <option value="3">3 stars</option>
+                <option value="4">4 stars</option>
+                <option value="5">5 stars</option>
+              </select>
+
+              <textarea class="form-control" ng-model="review.body" placeholder="Write review ..."/></textarea>
+              <label>by:</label>
+              <input class="form-control" ng-model="review.author" type="email" placeholder="Your Email"/>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
           </div>
         </section>
+
       </li>
     </ul>
   </div>

@@ -19,6 +19,18 @@
         full: '',
         thumb: ''
       }
+    ],
+    reviews: [
+      {
+        stars: 5,
+        body: "I love this product!",
+        author: "jj@example.com"
+      },
+      {
+        stars: 1,
+        body: "I hate this shit!",
+        author: "kk@example.com"
+      }
     ]
   },{
     name: 'Ecramenti',
