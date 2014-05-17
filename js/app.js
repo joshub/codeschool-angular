@@ -46,6 +46,7 @@
     soldOut: false   
   }];
 
+  //  Panel Controller
   app.controller('PanelController', function(){
     this.tab = 1;
 
@@ -57,4 +58,24 @@
       return this.tab == checkTab;
     };
   });
+
+
+  // Review Controller
+  app.controller('ReviewController', function(){
+    this.review = {};
+
+    this.addReview = function(product){
+      product.reviews.push(this.review);
+      this.review ={};
+    };
+  })
+
+  // Custom Directive
+  app.directive('productTitle', function(){
+    return {
+      restrict: 'A',
+      templateUrl: 'product_title.html'
+    };
+  });
+
 })();
